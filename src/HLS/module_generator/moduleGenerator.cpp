@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -575,7 +575,6 @@ void moduleGenerator::specialize_fu(std::string fuName, vertex ve, std::string l
       {
          GetPointer<functional_unit>(new_techNode_obj)->add(techNode_fu);
       }
-
       PRINT_DBG_MEX(DEBUG_LEVEL_VERBOSE, debug_level, "Specialization completed");
    }
 }

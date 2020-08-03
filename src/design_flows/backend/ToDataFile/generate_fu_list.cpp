@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2015-2019 Politecnico di Milano
+ *              Copyright (C) 2015-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -181,7 +181,7 @@ const DesignFlowStepFactoryConstRef GenerateFuList::CGetDesignFlowStepFactory() 
    return ToDataFileStep::CGetDesignFlowStepFactory();
 }
 
-void GenerateFuList::AnalyzeCell(functional_unit* fu, const unsigned int, const std::vector<std::string>&, const size_t, const std::vector<std::string>&, const size_t, const unsigned int constPort, const bool is_commutative)
+void GenerateFuList::AnalyzeCell(functional_unit* fu, const unsigned int, const std::vector<std::string>&, const size_t, const std::vector<std::string>&, const size_t, const unsigned int constPort, const bool is_commutative, size_t)
 {
    INDENT_DBG_MEX(DEBUG_LEVEL_VERY_PEDANTIC, debug_level, "-->Analyzing " + fu->get_name());
    const structural_objectRef obj = fu->CM->get_circ();

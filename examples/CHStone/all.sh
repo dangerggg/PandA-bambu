@@ -6,6 +6,11 @@ return_value=$?
 if test $return_value != 0; then
    exit $return_value
 fi
+$dir_script/EP2C70F896C6-R_15.0_O2_sdc_aligned_access.sh $@
+return_value=$?
+if test $return_value != 0; then
+   exit $return_value
+fi
 $dir_script/5CSEMA5F31C6_10.0_O2_sdc_aligned_access.sh $@
 return_value=$?
 if test $return_value != 0; then
@@ -61,6 +66,11 @@ return_value=$?
 if test $return_value != 0; then
    exit $return_value
 fi
+$dir_script/EP2C70F896C6-R_15.0_O3_sdc.sh $@
+return_value=$?
+if test $return_value != 0; then
+   exit $return_value
+fi
 $dir_script/5CSEMA5F31C6_10.0_O3_sdc.sh $@
 return_value=$?
 if test $return_value != 0; then
@@ -86,7 +96,7 @@ return_value=$?
 if test $return_value != 0; then
    exit $return_value
 fi
-$dir_script/xc7vx690t-3ffg1930-VVD_05.0_O3_sdc.sh -t120m $@
+$dir_script/xc7vx690t-3ffg1930-VVD_05.0_O3_sdc.sh $@
 return_value=$?
 if test $return_value != 0; then
    exit $return_value
@@ -121,8 +131,12 @@ return_value=$?
 if test $return_value != 0; then
    exit $return_value
 fi
-exit 0
 $dir_script/xc7z020-1clg484-VVD_15.0_O2_sdc_aligned_accessClang6.sh $@
+return_value=$?
+if test $return_value != 0; then
+   exit $return_value
+fi
+$dir_script/xc7z020-1clg484-VVD_15.0_O2_sdc_aligned_accessClang7.sh $@
 return_value=$?
 if test $return_value != 0; then
    exit $return_value

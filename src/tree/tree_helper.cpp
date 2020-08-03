@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -9030,4 +9030,19 @@ bool tree_helper::IsLoad(const tree_managerConstRef& TM, const tree_nodeConstRef
       }
    }
    return load_candidate;
+}
+
+bool tree_helper::IsLut(const tree_managerConstRef& TM, const tree_nodeConstRef& tn)
+{
+   if(tn->get_kind() == tree_reindex_K)
+   {
+      return IsLut(TM, GET_CONST_NODE(tn));
+   }
+   const auto ga = GetPointer<const gimple_assign>(tn);
+   if(not ga)
+   {
+      return false;
+   }
+   const auto op1 = GET_NODE(ga->op1);
+   return op1->get_kind() == lut_expr_K;
 }

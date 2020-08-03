@@ -1,30 +1,30 @@
-%Generated at 2019-05-07 07:38:45.023079 with bambu Version: PandA 0.9.6-dev - Revision 372b9be5fe693bba909d1690b98e71fb8fcf0843-PR-5 with arguments --compiler=I386_GCC49 --device-name=TO_BE_OVERWRITTEN --evaluation -fwhole-program -fno-delete-null-pointer-checks --no-iob --clock-period=10 --device=EP2C70F896C6-R --speculative-sdc-scheduling --experimental-setup=BAMBU-PERFORMANCE-MP
+%Generated at 2020-01-16 19:19:04.979219 with bambu  Version: PandA 0.9.6 - Revision 5dea469b31d6c7052279200a9bd3f69b10448cb6-PR-11 with arguments --compiler=I386_GCC49 --device-name=TO_BE_OVERWRITTEN --evaluation -fwhole-program -fno-delete-null-pointer-checks --no-iob --clock-period=10 --device=EP2C70F896C6-R --speculative-sdc-scheduling --experimental-setup=BAMBU-PERFORMANCE-MP
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
 \hline
-Benchmark Name          & Tot. Latency           & Num Cycles  & Area LE    & Mults    & Membits    & Clock Frequency & Clock Slack & HLS Time(s) \\
+Benchmark Name          & Tot. Latency           & Num Cycles & Area LE    & Mults   & Membits    & Clock Frequency & Clock Slack & HLS Time(s) \\
 \hline
-adpcm:main\_0           & $ 6.841 \cdot 10^{1} $ & $ 6806    $ & $ 22405  $ & $ 300  $ & $ 3468   $ & $ 99.49       $ & $ -0.05   $ & $ 36.78   $ \\
-aes:main\_0             & $ 1.732 \cdot 10^{1} $ & $ 1870    $ & $ 9512   $ & $ 0    $ & $ 24576  $ & $ 107.97      $ & $ 0.74    $ & $ 61.16   $ \\
-bf:main\_0              & $ 1.548 \cdot 10^{3} $ & $ 161264  $ & $ 5559   $ & $ 0    $ & $ 145072 $ & $ 104.17      $ & $ 0.40    $ & $ 9.47    $ \\
-dfadd:main\_0           & $ 4.565 \cdot 10^{0} $ & $ 521     $ & $ 4344   $ & $ 0    $ & $ 0      $ & $ 114.13      $ & $ 1.24    $ & $ 51.62   $ \\
-dfdiv:main\_0           & $ 3.323 \cdot 10^{1} $ & $ 3463    $ & $ 3788   $ & $ 24   $ & $ 0      $ & $ 104.22      $ & $ 0.40    $ & $ 10.77   $ \\
-dfdiv\_hls\_div:main\_0 & $ 1.141 \cdot 10^{1} $ & $ 1279    $ & $ 6223   $ & $ 100  $ & $ 0      $ & $ 112.06      $ & $ 1.08    $ & $ 11.74   $ \\
-dfmul:main\_0           & $ 1.637 \cdot 10^{0} $ & $ 185     $ & $ 2920   $ & $ 16   $ & $ 0      $ & $ 113.02      $ & $ 1.15    $ & $ 8.85    $ \\
-dfsin:main\_0           & $ 7.826 \cdot 10^{2} $ & $ 87077   $ & $ 18117  $ & $ 116  $ & $ 0      $ & $ 111.26      $ & $ 1.01    $ & $ 97.79   $ \\
-dfsin\_hls\_div:main\_0 & $ 3.659 \cdot 10^{2} $ & $ 38483   $ & $ 21543  $ & $ 208  $ & $ 0      $ & $ 105.16      $ & $ 0.49    $ & $ 98.27   $ \\
-gsm:main\_0             & $ 2.654 \cdot 10^{1} $ & $ 2721    $ & $ 14520  $ & $ 136  $ & $ 5120   $ & $ 102.53      $ & $ 0.25    $ & $ 42.52   $ \\
-jpeg:main\_0            & $ 7.758 \cdot 10^{3} $ & $ 591885  $ & $ 26701  $ & $ 160  $ & $ 460064 $ & $ 76.29       $ & $ -3.11   $ & $ 34.44   $ \\
-mips:main\_0            & $ 3.364 \cdot 10^{1} $ & $ 3641    $ & $ 3425   $ & $ 16   $ & $ 3072   $ & $ 108.24      $ & $ 0.76    $ & $ 5.68    $ \\
-mpeg2:main\_0           & $ 1.333 \cdot 10^{1} $ & $ 1711    $ & $ 2960   $ & $ 0    $ & $ 32768  $ & $ 128.39      $ & $ 2.21    $ & $ 1.85    $ \\
-sha\_driver:main\_0     & $ 1.185 \cdot 10^{3} $ & $ 130808  $ & $ 6160   $ & $ 0    $ & $ 117248 $ & $ 110.41      $ & $ 0.94    $ & $ 42.05   $ \\
+adpcm:main\_0           & $ 9.369 \cdot 10^{1} $ & $ 6856   $ & $ 18677  $ & $ 44  $ & $ 3120   $ & $ 73.17       $ & $ -3.67   $ & $ 44.47   $ \\
+aes:main\_0             & $ 1.509 \cdot 10^{1} $ & $ 1708   $ & $ 8123   $ & $ 0   $ & $ 24576  $ & $ 113.20      $ & $ 1.17    $ & $ 17.46   $ \\
+bf:main\_0              & $ 1.377 \cdot 10^{3} $ & $ 149688 $ & $ 4652   $ & $ 0   $ & $ 144560 $ & $ 108.67      $ & $ 0.80    $ & $ 8.65    $ \\
+dfadd:main\_0           & $ 3.525 \cdot 10^{0} $ & $ 407    $ & $ 3968   $ & $ 0   $ & $ 0      $ & $ 115.45      $ & $ 1.34    $ & $ 32.93   $ \\
+dfdiv:main\_0           & $ 1.709 \cdot 10^{1} $ & $ 1927   $ & $ 3868   $ & $ 24  $ & $ 0      $ & $ 112.76      $ & $ 1.13    $ & $ 16.91   $ \\
+dfdiv\_hls\_div:main\_0 & $ 1.128 \cdot 10^{1} $ & $ 1231   $ & $ 6149   $ & $ 100 $ & $ 0      $ & $ 109.09      $ & $ 0.83    $ & $ 17.24   $ \\
+dfmul:main\_0           & $ 1.451 \cdot 10^{0} $ & $ 169    $ & $ 3514   $ & $ 31  $ & $ 0      $ & $ 116.47      $ & $ 1.41    $ & $ 9.33    $ \\
+dfsin:main\_0           & $ 5.414 \cdot 10^{2} $ & $ 51724  $ & $ 18007  $ & $ 116 $ & $ 0      $ & $ 95.53       $ & $ -0.47   $ & $ 62.11   $ \\
+dfsin\_hls\_div:main\_0 & $ 3.503 \cdot 10^{2} $ & $ 36238  $ & $ 21342  $ & $ 208 $ & $ 0      $ & $ 103.44      $ & $ 0.33    $ & $ 63.60   $ \\
+gsm:main\_0             & $ 3.363 \cdot 10^{1} $ & $ 2782   $ & $ 13969  $ & $ 136 $ & $ 5120   $ & $ 82.71       $ & $ -2.09   $ & $ 122.10  $ \\
+jpeg:main\_0            & $ 6.403 \cdot 10^{3} $ & $ 599222 $ & $ 22935  $ & $ 160 $ & $ 441632 $ & $ 93.59       $ & $ -0.69   $ & $ 51.06   $ \\
+mips:main\_0            & $ 3.531 \cdot 10^{1} $ & $ 3934   $ & $ 2676   $ & $ 16  $ & $ 3072   $ & $ 111.42      $ & $ 1.03    $ & $ 5.12    $ \\
+mpeg2:main\_0           & $ 1.452 \cdot 10^{1} $ & $ 1702   $ & $ 2505   $ & $ 0   $ & $ 32768  $ & $ 117.23      $ & $ 1.47    $ & $ 2.65    $ \\
+sha\_driver:main\_0     & $ 1.119 \cdot 10^{3} $ & $ 125143 $ & $ 5823   $ & $ 0   $ & $ 117248 $ & $ 111.86      $ & $ 1.06    $ & $ 54.07   $ \\
 \hline
-Average                 & $                    $ & $         $ & $        $ & $      $ & $        $ & $ 106.95      $ & $ 0.54    $ & $         $ \\
+Average                 & $                    $ & $        $ & $        $ & $     $ & $        $ & $ 104.61      $ & $ 0.26    $ & $         $ \\
 \hline
-Overall                 & $ 1.185 \cdot 10^{4} $ & $ 1031714 $ & $ 148177 $ & $ 1076 $ & $ 791388 $ & $             $ & $         $ & $ 512.99  $ \\
+Overall                 & $ 1.002 \cdot 10^{4} $ & $ 982731 $ & $ 136208 $ & $ 835 $ & $ 772096 $ & $             $ & $         $ & $ 507.70  $ \\
 \hline
 \end{tabular}
 %Benchmarks:
-%adpcm/adpcm.c
+%adpcm/adpcm.c EP2C70F896C6-R_O3_adpcm_constraints.xml
 %aes/aes.c
 %dfadd/dfadd.c
 %dfdiv/dfdiv.c --benchmark-name=dfdiv

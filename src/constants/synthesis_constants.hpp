@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (c) 2015-2018 Politecnico di Milano
+ *              Copyright (c) 2015-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -38,4 +38,4 @@
  *
  */
 /// The file containing the timing violation report
-#define STR_CST_synthesis_timing_violation_report "HLS_output/Synthesis/timing_violation_report"
+#define STR_CST_synthesis_timing_violation_report "timing_violation_report"

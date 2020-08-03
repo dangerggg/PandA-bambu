@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -1583,7 +1583,9 @@ DesignFlowStep_Status cdfc_module_binding::InternalExec()
             INDENT_DBG_MEX(DEBUG_LEVEL_VERY_PEDANTIC, debug_level, "---mux_time: " + STR(mux_time) + " area_mux=" + STR(allocation_information->estimate_mux_area(partition.first)));
 
             CliqueCovering_Algorithm clique_covering_algorithm = GetPointer<const CDFCModuleBindingSpecialization>(hls_flow_step_specialization)->clique_covering_algorithm;
-            if(allocation_information->is_one_cycle_direct_access_memory_unit(partition.first) and not allocation_information->is_readonly_memory_unit(partition.first))
+            bool disabling_slack_cond0 = ((allocation_information->get_number_channels(partition.first) >= 1) and
+                                          (!allocation_information->is_readonly_memory_unit(partition.first) || (!parameters->isOption(OPT_rom_duplication) || !parameters->getOption<bool>(OPT_rom_duplication))));
+            if(disabling_slack_cond0)
             {
                clique_covering_algorithm = CliqueCovering_Algorithm::BIPARTITE_MATCHING;
             }
@@ -1591,9 +1593,7 @@ DesignFlowStep_Status cdfc_module_binding::InternalExec()
             const CliqueCovering_Algorithm clique_covering_method_used = clique_covering_algorithm;
             std::string res_name = allocation_information->get_fu_name(partition.first).first;
             std::string lib_name = HLS->HLS_T->get_technology_manager()->get_library(res_name);
-            bool disabling_slack_based_binding = ((allocation_information->get_number_channels(partition.first) >= 1) and
-                                                  (!allocation_information->is_readonly_memory_unit(partition.first) || (!parameters->isOption(OPT_rom_duplication) || !parameters->getOption<bool>(OPT_rom_duplication)))) ||
-                                                 lib_name == WORK_LIBRARY || lib_name == PROXY_LIBRARY || allocation_information->get_number_fu(partition.first) != INFINITE_UINT;
+            bool disabling_slack_based_binding = disabling_slack_cond0 || lib_name == WORK_LIBRARY || lib_name == PROXY_LIBRARY || allocation_information->get_number_fu(partition.first) != INFINITE_UINT;
 
             THROW_ASSERT(lib_name != PROXY_LIBRARY || 1 == allocation_information->get_number_fu(partition.first), "unexpected condition");
 
@@ -2115,7 +2115,9 @@ bool cdfc_module_binding::can_be_clustered(vertex v, OpGraphConstRef fsdg, fu_bi
    if(vars_read1.size() > 1)
    {
       double resource_area = allocation_information->compute_normalized_area(fu_s1);
-      double exec_time = allocation_information->get_worst_execution_time(fu_s1) - allocation_information->get_correction_time(fu_s1, fsdg->CGetOpNodeInfo(v)->GetOperation());
+      double exec_time =
+          allocation_information->get_worst_execution_time(fu_s1) -
+          allocation_information->get_correction_time(fu_s1, fsdg->CGetOpNodeInfo(v)->GetOperation(), static_cast<unsigned>(fsdg->CGetOpNodeInfo(v)->GetVariables(FunctionBehavior_VariableType::SCALAR, FunctionBehavior_VariableAccessType::USE).size()));
       // double stage_time = allocation_information->get_worst_stage_period(fu_s1);
       // if(exec_time == 0.0 && stage_time == 0.0) return true;
       if(exec_time < 1.0 || resource_area < 0.5)

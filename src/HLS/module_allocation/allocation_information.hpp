@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -716,7 +716,7 @@ class AllocationInformation : public HLSFunctionIR
     * @param operation_name is the operation name
     * @return a correction time
     */
-   double get_correction_time(unsigned int fu, const std::string& operation_name) const;
+   double get_correction_time(unsigned int fu, const std::string& operation_name, unsigned int n_ins) const;
 
    /**
     * estimate the delay of a mux that can be uses to mux the input of the given functional unit

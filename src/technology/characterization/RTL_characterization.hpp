@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -165,7 +165,7 @@ class RTLCharacterization : public FunctionalUnitStep
     * @param is_commutative is true if all the operations are commutative
     */
    virtual void AnalyzeCell(functional_unit* fu, const unsigned int prec, const std::vector<std::string>& portsize_parameters, const size_t portsize_index, const std::vector<std::string>& pipe_parameters, const size_t stage_index,
-                            const unsigned int constPort, const bool is_commutative);
+                            const unsigned int constPort, const bool is_commutative, size_t max_lut_size);
 
  public:
    /**

@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -740,6 +740,13 @@ class BehavioralHelper
     * @return true if statement is a load
     */
    bool IsLoad(const unsigned int statement_index) const;
+
+   /**
+    * Return if an operation is a lut_expr
+    * @param statement_index is the index of the tree node
+    * @return true if statement is a lut_expr
+    */
+   bool IsLut(const unsigned int statement_index) const;
 };
 
 /**

@@ -12,7 +12,7 @@
  *                       Politecnico di Milano - DEIB
  *                        System Architectures Group
  *             ***********************************************
- *              Copyright (C) 2004-2019 Politecnico di Milano
+ *              Copyright (C) 2004-2020 Politecnico di Milano
  *
  *   This file is part of the PandA framework.
  *
@@ -5758,6 +5758,11 @@ bool BehavioralHelper::IsLoad(const unsigned int statement_index) const
 {
    const auto& fun_mem_data = AppM->CGetFunctionBehavior(function_index)->get_function_mem();
    return tree_helper::IsLoad(TM, TM->CGetTreeNode(statement_index), fun_mem_data);
+}
+
+bool BehavioralHelper::IsLut(const unsigned int statement_index) const
+{
+   return tree_helper::IsLut(TM, TM->CGetTreeNode(statement_index));
 }
 
 void BehavioralHelper::InvaildateVariableName(const unsigned int index)
